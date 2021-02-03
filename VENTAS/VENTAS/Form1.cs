@@ -19,7 +19,7 @@ namespace VENTAS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("HOLA MUNDO");
+            MessageBox.Show("TEN FÉ, TODO ESTARÁ BIEN");
         }
     }
 }
