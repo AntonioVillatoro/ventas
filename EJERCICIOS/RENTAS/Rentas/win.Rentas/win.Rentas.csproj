@@ -110,6 +110,12 @@
   <ItemGroup>
     <None Include="Resources\WhatsApp Image 2021-02-06 at 6.12.54 PM.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLrentas\BLrentas.csproj">
+      <Project>{c020cf12-e41e-45fa-ae59-d55a9f958e1b}</Project>
+      <Name>BLrentas</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

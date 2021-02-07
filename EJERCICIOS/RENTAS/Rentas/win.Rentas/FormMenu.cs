@@ -19,10 +19,16 @@ namespace win.Rentas
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-           
+            Login();
+
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login ();
+        }
+
+        private void Login()
         {
             var formLogin = new FormLogin();
             formLogin.ShowDialog();
