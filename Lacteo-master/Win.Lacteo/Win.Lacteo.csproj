@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C54F92DB-2DCA-4F83-8E56-856A3FEE4385}</ProjectGuid>
+    <ProjectGuid>{A4107F8B-2DE6-41D4-91A9-231DEF27ACE4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>win.Rentas</RootNamespace>
-    <AssemblyName>win.Rentas</AssemblyName>
+    <RootNamespace>Win.Lacteo</RootNamespace>
+    <AssemblyName>Win.Lacteo</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -70,14 +70,11 @@
     <Compile Include="FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormRentas.Designer.cs">
-      <DependentUpon>FormRentas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormClientes.resx">
+      <DependentUpon>FormClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +94,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\BL.Lacteos.Producto.datasource" />
+    <None Include="Properties\DataSources\BL.Lacteos.ProductosBL.datasource" />
+    <None Include="Properties\DataSources\BL.Lacteos.SeguridadBL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -111,13 +111,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\WhatsApp Image 2021-02-06 at 6.12.54 PM.jpeg" />
+    <None Include="Resources\images.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLrentas\BLrentas.csproj">
-      <Project>{c020cf12-e41e-45fa-ae59-d55a9f958e1b}</Project>
-      <Name>BLrentas</Name>
+    <ProjectReference Include="..\BL.Lacteos\BL.Lacteos.csproj">
+      <Project>{17144186-6c60-4763-a086-80c0f112e68d}</Project>
+      <Name>BL.Lacteos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vaca.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
