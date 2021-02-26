@@ -47,7 +47,7 @@ namespace Win.Lacteo
             {
                 listaProductosBindingSource.ResetBindings(false);
                 deshalitarHabilitarBotones(true);
-                MessageBox.Show ("Producto Guardado!")
+                MessageBox.Show("Producto Guardado!");
             }
             else
             {
