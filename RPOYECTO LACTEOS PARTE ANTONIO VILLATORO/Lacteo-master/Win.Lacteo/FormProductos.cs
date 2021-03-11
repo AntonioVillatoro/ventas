@@ -55,15 +55,16 @@ namespace Win.Lacteo
 
             if(fotoPictureBox.Image != null)
             {
-                producto.Foto = Program.imageToByArray(fotoPictureBox.Image);
+               producto.Foto = Program.imageToByteArray(fotoPictureBox.Image);
             }
             else
-            {
-                producto.Foto = null;
-            }
+           {
+           producto.Foto = null;
+           }
 
 
             var resultado = _productos.GuardarProducto(producto);
+
             if (resultado.Exitoso == true)
             {
                 listaProductosBindingSource.ResetBindings(false);
@@ -167,15 +168,13 @@ namespace Win.Lacteo
 
         private void button1_Click(object sender, EventArgs e)
         {
+            openFileDialog1.FileName = "";
+            openFileDialog1.ShowDialog();
 
-            var producto = (Producto)listaProductosBindingSource.Current;
-           
-            if (producto != null)
 
-            {
-                openFileDialog1.ShowDialog();
-                var archivo = openFileDialog1.FileName;
+            var archivo = openFileDialog1.FileName;
 
+      
                 if (archivo != "")
                 {
                     var fileInfo = new FileInfo(archivo);
@@ -183,13 +182,6 @@ namespace Win.Lacteo
 
                     fotoPictureBox.Image = Image.FromStream(fileStream);
                 }
-
-
-            }
-            else
-            {
-                MessageBox.Show("Cree un producto antes de asignarle una imagen");
-            }
    
         }
 
@@ -209,6 +201,11 @@ namespace Win.Lacteo
         }
 
         private void categoriaIdLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fotoPictureBox1_Click(object sender, EventArgs e)
         {
 
         }

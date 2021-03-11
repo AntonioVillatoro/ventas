@@ -21,10 +21,11 @@ namespace Win.Lacteo
             Application.Run(new FormMenu());
         } 
         
-        public static byte [] imageToByArray (Image imagein)
+        public static byte [] imageToByteArray (Image imageIn)
         {
-            var ms = new MemoryStream();
-            imagein.Save(ms, imagein.RawFormat);
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, imageIn.RawFormat);
+
             return ms.ToArray();
         } 
     }
