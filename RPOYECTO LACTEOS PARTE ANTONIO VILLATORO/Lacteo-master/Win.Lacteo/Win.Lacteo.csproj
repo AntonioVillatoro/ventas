@@ -119,9 +119,12 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BL.Lacteo.CategoriaBL.datasource" />
     <None Include="Properties\DataSources\BL.Lacteo.Producto.datasource" />
     <None Include="Properties\DataSources\BL.Lacteo.ProductosBL.datasource" />
     <None Include="Properties\DataSources\BL.Lacteo.SeguridadBL.datasource" />
+    <None Include="Properties\DataSources\BL.Lacteo.Tipo.datasource" />
+    <None Include="Properties\DataSources\BL.Lacteo.TiposBL.datasource" />
     <None Include="Properties\DataSources\BL.Lacteos.Producto.datasource" />
     <None Include="Properties\DataSources\BL.Lacteos.ProductosBL.datasource" />
     <None Include="Properties\DataSources\BL.Lacteos.SeguridadBL.datasource" />

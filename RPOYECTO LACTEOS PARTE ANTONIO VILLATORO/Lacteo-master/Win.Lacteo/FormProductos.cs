@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL.Lacteo;
+using System.IO;
 
 namespace Win.Lacteo
 {
@@ -15,14 +16,24 @@ namespace Win.Lacteo
     {
 
         ProductosBL _productos;
+        CategoriaBL _categorias;
+        TiposBL _tiposBL;
 
         public FormProductos()
         {
             InitializeComponent();
 
             _productos = new ProductosBL();
-
             listaProductosBindingSource.DataSource = _productos.ObtenerProductos();
+
+            _categorias = new CategoriaBL();
+            listaCategoriasBindingSource.DataSource = _categorias.ObtenerCategorias();
+
+            _tiposBL = new TiposBL();
+            listaTiposBindingSource.DataSource = _tiposBL.ObtenerTipos();
+
+
+
         }
 
         private void listaProductosDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -40,9 +51,19 @@ namespace Win.Lacteo
             listaProductosBindingSource.EndEdit();
 
             var producto = (Producto)listaProductosBindingSource.Current;
+;
+
+            if(fotoPictureBox.Image != null)
+            {
+                producto.Foto = Program.imageToByArray(fotoPictureBox.Image);
+            }
+            else
+            {
+                producto.Foto = null;
+            }
+
 
             var resultado = _productos.GuardarProducto(producto);
-
             if (resultado.Exitoso == true)
             {
                 listaProductosBindingSource.ResetBindings(false);
@@ -135,6 +156,59 @@ namespace Win.Lacteo
         }
 
         private void existenciaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fotoPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            var producto = (Producto)listaProductosBindingSource.Current;
+           
+            if (producto != null)
+
+            {
+                openFileDialog1.ShowDialog();
+                var archivo = openFileDialog1.FileName;
+
+                if (archivo != "")
+                {
+                    var fileInfo = new FileInfo(archivo);
+                    var fileStream = fileInfo.OpenRead();
+
+                    fotoPictureBox.Image = Image.FromStream(fileStream);
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Cree un producto antes de asignarle una imagen");
+            }
+   
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fotoPictureBox.Image = null;
+        }
+
+        private void idTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void categoriaIdLabel_Click(object sender, EventArgs e)
         {
 
         }
